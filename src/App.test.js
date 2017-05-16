@@ -1,8 +1,23 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { shallow } from 'enzyme';
+import sinon from 'sinon';
+import { expect } from 'chai';
 import App from './App';
+let wrapper;
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-});
+describe('<App />', () => {
+  beforeEach(() => {
+    wrapper = shallow(<App />);
+  });
+
+  it('renders without crashing', () => {
+  expect(wrapper.find('div')).to.have.length(1);
+  expect(wrapper.find('.App')).to.have.length(1);
+  });
+
+  it('renders the hello world', () => {
+  expect(wrapper.find('h2')).to.have.length(1);
+  expect(wrapper.text()).to.equal('Hello World');
+  });
+})
+
