@@ -3,10 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "chai": "^3.5.0",
     "react": "^15.5.4",
-    "react-dom": "^15.5.4"
+    "react-dom": "^15.5.4",
+    "sinon": "^2.2.0"
   },
   "devDependencies": {
+    "enzyme": "^2.8.2",
+    "expect": "^1.20.2",
+    "jsdom": "^10.1.0",
+    "react-addons-test-utils": "^15.5.1",
     "react-scripts": "0.9.5"
   },
   "scripts": {
