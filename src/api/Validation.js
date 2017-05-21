@@ -8,7 +8,7 @@ export class Validation {
     const validPassword = Validation.lengthChecker(password, 'password');
     const validFirstName = Validation.lengthChecker(firstName, 'firstname');
     const validLastName = Validation.lengthChecker(lastName, 'lastname');
-    if((validEmail === email) && (validPassword ===password) && firstName && lastName && (validFirstName === firstName) && (validLastName === lastName)) {
+    if((validEmail === email) && (validPassword ===password) && (validFirstName === firstName) && (validLastName === lastName)) {
       return { status: 'Successful', email: validEmail, password: validPassword, firstName: validFirstName, lastName: validLastName, score: 0 };
     }
     return Validation.errors();
