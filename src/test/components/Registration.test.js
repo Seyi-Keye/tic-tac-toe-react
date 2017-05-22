@@ -8,7 +8,7 @@ let wrapper;
 
 describe('Describe <Registration /> Component : ', () => {
   beforeEach(() => {
-    wrapper = shallow(<SignUpForm />);
+    wrapper = shallow(<Registration />);
   });
 
   it('should contain a form', () => {

@@ -52,4 +52,7 @@ export class Validation {
       return acc;
     }, '');
   }
+  static clearErrors() {
+    return errorArray = [];
+  }
 }

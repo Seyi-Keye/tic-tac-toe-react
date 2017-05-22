@@ -14,9 +14,8 @@ describe('<App />', () => {
   expect(wrapper.find('.App')).to.have.length(1);
   });
 
-  it('renders the hello world', () => {
-  expect(wrapper.find('h2')).to.have.length(1);
-  expect(wrapper.text()).to.equal('Hello World');
+  it('renders the <Registration /> Component', () => {
+  expect(wrapper.find('Registration')).to.have.length(1);
   });
 })
 

@@ -77,3 +77,15 @@ describe('Validation lastname checker', () => {
     expect(Validation.errors()).to.contain('Invalid lastname, length of 3 at least');
   });
 });
+
+describe('Validation clearErrors function', () => {
+  it('contains empty errorArray', () => {
+    expect(Validation.clearErrors()).to.deep.equal([]);
+  });
+});
+
+describe('Validation errors function', () => {
+  it('returns accumulated error', () => {
+    expect(Validation.errors()).to.equal('');
+  });
+});
