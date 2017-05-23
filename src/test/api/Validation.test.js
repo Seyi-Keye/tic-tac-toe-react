@@ -8,7 +8,6 @@ describe('Validation Service Api' , () => {
     'abc', 'abc')).to.deep.equal({
       status: 'Successful',
       email: 'abc@gmail.com',
-      password: 'abc',
       firstName: 'abc',
       lastName: 'abc',
       score: 0

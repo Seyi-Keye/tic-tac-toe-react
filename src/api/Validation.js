@@ -1,4 +1,3 @@
-import localforage from 'localforage';
 let errorArray = [];
 
 export class Validation {
@@ -12,7 +11,6 @@ export class Validation {
       return {
         status: 'Successful',
         email: email,
-        password: password,
         firstName: firstName,
         lastName: lastName,
         score: 0
