@@ -8,7 +8,6 @@ describe('Validation Service Api' , () => {
     'abc', 'abc')).to.deep.equal({
       status: 'Successful',
       email: 'abc@gmail.com',
-      password: 'abc',
       firstName: 'abc',
       lastName: 'abc',
       score: 0
@@ -75,5 +74,17 @@ describe('Validation lastname checker', () => {
   it('returns false on invalid lastname', () => {
     expect(Validation.lengthChecker('a', 'lastname')).to.equal(false);
     expect(Validation.errors()).to.contain('Invalid lastname, length of 3 at least');
+  });
+});
+
+describe('Validation clearErrors function', () => {
+  it('contains empty errorArray', () => {
+    expect(Validation.clearErrors()).to.deep.equal([]);
+  });
+});
+
+describe('Validation errors function', () => {
+  it('returns accumulated error', () => {
+    expect(Validation.errors()).to.equal('');
   });
 });
