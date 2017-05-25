@@ -2,6 +2,8 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { expect } from 'chai';
 import App from '../App';
+import { NavBar } from '../components/NavBar';
+
 let wrapper;
 
 describe('<App />', () => {
@@ -16,6 +18,10 @@ describe('<App />', () => {
 
   it('renders the <Registration /> Component', () => {
   expect(wrapper.find('Registration')).to.have.length(1);
+});
+
+it('renders the <NavBar /> Component', () => {
+  expect(wrapper.find('NavBar')).to.have.length(1);
   });
 })
 

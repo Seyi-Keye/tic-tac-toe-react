@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import localforage from 'localforage';
 import { Validation } from '../api/Validation';
-import toastr  from 'toastr';
+import toastr from 'toastr';
 
 export class Registration extends Component {
   constructor(props) {

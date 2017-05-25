@@ -1,0 +1,15 @@
+.topper {
+  background-color: #0088cc !important;
+  border-color: #99ddff !important;
+  height: 60px;
+}
+
+.logo {
+  font-family: 'Special Elite', cursive;
+  font-size: 35px;
+  padding-left: 20px;
+}
+
+a {
+  color: white !important;
+}
