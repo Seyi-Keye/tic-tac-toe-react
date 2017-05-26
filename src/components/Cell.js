@@ -3,22 +3,21 @@ import React, { Component } from 'react';
 export class Cell extends Component {
   constructor() {
     super();
-    this.state = {
-      symbol: ""
-    }
     this.handleDisplay = this.handleDisplay.bind(this);
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick() {
+    const click = this.props.click + 1;
+    this.props.updateClick(click, this.props.index);
   }
 
   handleDisplay() {
-    const click = this.props.click + 1;
-    if (!this.state.symbol) {
-      if (click%2 ===1) {
-        this.setState({symbol: "glyphicon glyphicon-remove" })
-      } else {
-        this.setState({ symbol: "glyphicon glyphicon-ok" })
-      }
-      console.log(this.props.index, "index")
-      this.props.updateClick(click, this.props.index);
+    const symbol = this.props.symbol;
+    if (symbol === "x") {
+      return "glyphicon glyphicon-remove";
+    } else if (symbol === "o") {
+      return "glyphicon glyphicon-ok";
     }
   }
 
@@ -29,12 +28,18 @@ export class Cell extends Component {
           border: "1px solid black",
           width: "100px",
           height: "100px",
-          display: "inline-block"
+          display: "inline-block",
+          textAlign: "center",
+          fontSize: "30px",
+          verticalAlign: "top"
         }}
-        onClick={this.handleDisplay}
+        onClick={this.handleClick}
       >
   <span
-    className={this.state.symbol}>
+    style={{
+      marginTop: "35px"
+    }}
+    className={this.handleDisplay()}>
     </span>
 </div>
     )

@@ -19,7 +19,6 @@ export class Board extends Component {
     const symbol = click%2 ? 'x' : 'o';
     cells[index] = symbol;
     this.setState({click, cells}, () => {
-      console.log(this.state.cells, '------------')
       this.checkWinning(symbol);
     });
   }
@@ -27,14 +26,25 @@ export class Board extends Component {
   checkWinning(symbol) {
     const cells = this.state.cells;
     if (matchWinningCells(cells, symbol)) {
-      toastr.success(`${symbol} has won`)
+      toastr.success(`${symbol} has won`);
+      this.setState ({
+        click: 0,
+        cells: []
+      });
     }
   }
 
   buildBoard(){
     const cells = [];
     for(let i = 0; i< 9; i++) {
-      cells.push(<Cell key={i} index={i} click={this.state.click} updateClick={this.updateClick}/>);
+      cells.push(
+        <Cell
+          key={i}
+          index={i}
+          click={this.state.click}
+          updateClick={this.updateClick}
+          symbol={this.state.cells[i]}
+        />);
     }
     return cells;
   }
@@ -43,7 +53,7 @@ export class Board extends Component {
     return(
       <div
         style={{
-          width: "300px"
+          width: "350px"
           }}
       >
         {this.buildBoard()}

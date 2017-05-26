@@ -1,16 +1,23 @@
 export function matchWinningCells(cells, type) {
-  const patterns = [[0,1,2], [3,4,5], [6,7,8], [0,4,8], [1,4,7], [2,4,6], [0,3,6], [2,5,8]];
+  const patterns = [
+    [0,1,2],
+    [3,4,5],
+    [6,7,8],
+    [0,4,8],
+    [1,4,7],
+    [2,4,6],
+    [0,3,6],
+    [2,5,8]
+  ];
 
   let win = false;
 
   for(let i = 0; i<patterns.length; i++) {
     const result = patterns[i].filter((item) => {
-      console.log(cells[item], "pattern")
-      console.log(cells[item] !== type, "checks")
       return cells[item] !== type;
     });
+
     if(!result.length) {
-      console.log('=======', win)
       win = true;
       break;
     }
